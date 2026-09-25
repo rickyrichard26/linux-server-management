@@ -7,6 +7,7 @@ if ! [[ "$THRESHOLD" =~ ^[0-9]+$ ]] || [ "$THRESHOLD" -gt 100 ]; then
     exit 1
 fi
 
+# Checks disk usage and warns if threshold exceeded
 echo "======================================"
 echo "       Disk Usage Check"
 echo "======================================"
