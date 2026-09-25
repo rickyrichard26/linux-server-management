@@ -11,7 +11,7 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-for servic in "$@"; do
+for service in "$@"; do
     echo
     echo "Service: $service"
 
