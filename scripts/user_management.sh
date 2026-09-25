@@ -15,7 +15,18 @@ case "$action" in
     fi
     sudo useradd -m "$username" && echo "User '$username' added successfully."
     ;;
-  delete)
+    delete)
+    if [ -z "$username" ]; then
+      echo "Error: username required. Usage: $0 delete <username>"
+      exit 1
+    fi
+    read -p "Are you sure you want to delete user '$username'? (y/n) " confirm
+    if [ "$confirm" = "y" ]; then
+      sudo userdel -r "$username" && echo "User '$username' deleted successfully."
+    else
+      echo "Deletion cancelled."
+    fi
+    ;;delete)
     if [ -z "$username" ]; then
       echo "Error: username required. Usage: $0 delete <username>"
       exit 1
