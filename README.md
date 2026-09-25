@@ -8,7 +8,9 @@
 
 Linux Server Management is a Linux/DevOps project designed to provide
 
-basic server administration, user management, and monitoring utilities.
+HEAD
+basic server administration, user management, automated backups, and system monitoring capabilities.
+ feature/conflict-b
 
 
 
