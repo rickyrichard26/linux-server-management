@@ -26,8 +26,17 @@ case "$action" in
     echo "Current system users:"
     cut -d: -f1 /etc/passwd
     ;;
+
+  reset-password)
+    if [ -z "$username" ]; then
+      echo "Error: username required. Usage: $0 reset-password <username>"
+      exit 1
+    fi
+    sudo passwd "$username"
+    ;;
+
   *)
-    echo "Usage: $0 {add|delete|list} [username]"
+    echo "Usage: $0 {add|delete|list} [username]"    echo "Usage: $0 {add|delete|list|reset-password} [username]"
     exit 1
     ;;
 esac
